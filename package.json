@@ -7,10 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Otimkev/bodaBj.git"
-  },
   "author": "kevin",
   "license": "ISC",
   "dependencies": {
