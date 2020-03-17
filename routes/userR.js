@@ -5,7 +5,7 @@ const router = express.Router();
 const boda_control = require('../controller/userC');
 
 //Get home page
-router.get('/',boda_control.boda_list);
+router.get('/',boda_control.boda_index);
 
 
 // //Get request for creating boda rider

@@ -6,4 +6,5 @@ const boda_name_schema = mongoose.Schema({
   nickname:String,
 })
 
-mongoose.model('Boda',boda_name_schema);
+const rider = mongoose.model('rider',boda_name_schema);
+module.exports=rider;

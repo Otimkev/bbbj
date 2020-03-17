@@ -1,61 +1,8 @@
 extends layout
 
 block content
-      form(action='/bodarider/create', method='POST')
-        label(for='names', name='names')
-          | Names:
-          input(name='names', type='text')
-        br
-        label(for='current_date', name='current_date')
-          | Current Date:
-          input(name='current_date', type='text')
-        br
-        label(for='phone_number', name='phone_number')
-          | Phone Number:
-          input(name='phone_number', type='text')
-        br
-        label(for='nationality', name='nationality')
-          | Nationality:
-          input(name='nationality', type='text')
-        br
-        label(for='nin', name='nin')
-          | NIN:
-          input(name='nin', type='text')
-        br
-        label(for='date_of_birth', name='date_of_birth')
-          | Date of birth:
-          input(name='date_of_birth', type='date')
-        br
-        label(for='type_of_vehicle', name='type_of_vehicle') Type of vehicle:
-        select(name='type_of_vehicle')
-          option(value='bodaboda') Bodaboda
-          option(value='tukutuku') Tukutuku
-        br
-        label(for='marital_status', name='dmarital_status') Marital Status:
-        select(name='marital_status')
-          option(value='single') Single
-          option(value='devoced') Devoced
-          option(value='relationship') Relationship
-        label(for='referee_name', name='referee_name')
-          | Referee's names:
-          input(name='referee_name', type='text')
-        br
-        label(for='referee_phone', name='referee_phone')
-          | Referee's phone:
-          input(name='referee_phone', type='text')
-        br
-        label(for='referee_work', name='referee_work')
-          | Referee's occupation:
-          input(name='referee_work', type='text')
-        br
-        label(for='referee_dob', name='referee_dob')
-          | Referee's date of birth:
-          input(name='referee_dob', type='date')
-        br
-        input(name='loans', type='checkbox')
-        label(for='loans', name='Other_loans', style='width: 250px;') Other loans in case of any?
-        br
-        label(for='stage_name', name='stage_name') Stage name:
-        input(name='stage_name', id='', type='text')
-      input(name='submit', id='', type='submit')
-      
+  form
+    .form-group
+      label(for='names') Names
+      input#names.form-control(aria-describedby='emailHelp', placeholder='Enter names', type='text')
+                

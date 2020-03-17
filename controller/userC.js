@@ -1,42 +1,41 @@
 //const Boda = require('../model/sample')
 const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
-const bodaSchema = new Schema({
-  firstname:String,
-  lastname:String,
-  nickname:String,
-});
-
-const rider = mongoose.model('rider',bodaSchema);
+const rider = require('../model/sample')
 
 //Get home page
-exports.boda_list = (req,res)=>{
-  res.send('implement home page here')
+exports.boda_index = (req,res)=>{
+  res.render('index',{title:'welcome to Bodaboda Banja'})
 };
 
 
 //Get request for creating boda rider
 module.exports.boda_rider_create_get = (req,res)=>{
-    res.render('sample')
+    res.render('boda_form',{title:'Register rider'})
 };
 
 //Post request for creating boda rider
 exports.boda_rider_create_post = async (req,res)=>{
-let person = new rider(req.body)
-try{person.save((err)=>{
-  console.error(err);
-  console.log(person)
-})}
-  catch(error){console.error('failed')}
+let person = new rider({
+  firstname:req.body.firstname,
+  lastname:req.body.lastname,
+  nickname:req.body.nickname,
+});
+try{
+  let item = await person.save()
+  console.log(item)
 }
+catch(err){
+  res.json({message:err})
+}
+};
+
 
 //Get request to delete boda rider
 exports.boda_rider_delete_get = async (req,res)=>{
  res.send('implement the boda delete _get')
 };
 
-//Post request for creating boda rider
+//Post request to delete boda rider
 exports.boda_rider_delete_post = (req,res)=>{
   res.send('implement the boda create form_post')
 };
@@ -70,6 +69,11 @@ exports.boda_rider_detail_get = (req,res)=>{
 };
 
 //Get request for a list of all boda riders
-exports.boda_rider_list_get = (req,res)=>{
-  res.send('implement the boda rider list')
-};
+exports.boda_rider_list_get = async (req,res)=>{
+  try{
+    const Rider = await rider.find();
+  res.render('list',{title:'List of Registered riders',boda:Rider});
+  }catch(err){
+    res.json({message:err});
+  }
+}
