@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    fieldset input[type='text']{
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    fieldset label{
+      display: inline-block;
+      width: 200px;
+      padding-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/bodarider/create" method="POST">
+    <fieldset>
+      <legend>Personal Info</legend>
+       <label for="names" name="names">Names:<input type="text" name="names"></label><br>
+       <label for="current_date" name="current_date">Current Date:<input type="text" name="current_date"></label><br>
+       <label for="phone_number" name="phone_number">Phone Number:<input type="text" name="phone_number"></label><br>
+       <label for="nationality" name="nationality">Nationality:<input type="text" name="nationality"></label><br>
+       <label for="nin" name="nin">NIN:<input type="text" name="nin"></label><br>
+       <label for="date_of_birth" name="date_of_birth">Date of birth:<input type="date" name="date_of_birth"></label><br>
+       <label for="type_of_vehicle" name="type_of_vehicle">Type of vehicle:</label>
+       <select name="type_of_vehicle">
+         <option value="bodaboda">Bodaboda</option>
+         <option value="tukutuku">Tukutuku</option>
+       </select><br>
+       <label for="marital_status" name="dmarital_status">Marital Status:</label>
+       <select name="marital_status">
+         <option value="single">Single</option>
+         <option value="devoced">Devoced</option>
+         <option value="relationship">Relationship</option>
+       </select>
+    </fieldset>
+    <fieldset>
+      <legend>Referee Info</legend>
+      <label for="referee_name" name="referee_name">Referee's names:<input type="text" name="referee_name"></label><br>
+      <label for="referee_phone" name="referee_phone">Referee's phone:<input type="text" name="referee_phone"></label><br>
+      <label for="referee_work" name="referee_work">Referee's occupation:<input type="text" name="referee_work"></label><br>
+      <label for="referee_dob" name="referee_dob">Referee's date of birth:<input type="date" name="referee_dob"></label><br>
+    </fieldset>
+    <fieldset>
+      <legend>Others</legend>
+      <input type="checkbox" name="loans"><label for="loans" name="Other_loans" style="width: 250px;">Other loans in case of any?</label><br>
+      <label for="stage_name" name="stage_name">Stage name:</label>
+      <input type="text" name="stage_name" id="">
+    </fieldset>
+    <input type="submit" name="" id="">
+    <input type="submit" name="" id="" value="Cancel">
+  </form>
+</body>
+</html>
